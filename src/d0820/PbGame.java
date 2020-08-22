@@ -44,6 +44,22 @@ public class PbGame {
 		}
 	}
 
+	public void decideWin() {
+		int count = 0;
+		for (int y = 0; y < map.length; y++) {
+			for (int x = 0; x < map.length; x++) {
+				if (map[y][x] == '4') {
+					count = count + 1;
+				}
+			}
+		}
+		if (count == 0) {
+			System.out.println("您已通过此关!");
+			level = level + 1;
+			loadMap();
+		}
+	}
+
 	// 查找小人坐标x,y
 	private int[] findMan() {
 		for (int y = 0; y < map.length; y++) {
@@ -70,6 +86,9 @@ public class PbGame {
 			if (map[y - 2][x] == '1' || map[y - 2][x] == '3' || map[y - 2][x] == '9') {
 				return;
 			}
+			if (map[y - 2][x] == '4') {
+				map[y - 1][x] = '9';
+			}
 			map[y - 2][x] = map[y - 1][x];
 		}
 
@@ -92,6 +111,9 @@ public class PbGame {
 			// 箱子前面是房子1，箱子3，压在目的地上的箱子9那么不能推动
 			if (map[y + 2][x] == '1' || map[y + 2][x] == '3' || map[y + 2][x] == '9') {
 				return;
+			}
+			if (map[y + 2][x] == '4') {
+				map[y + 1][x] = '9';
 			}
 			map[y + 2][x] = map[y + 1][x];
 		}
@@ -116,6 +138,9 @@ public class PbGame {
 			if (map[y][x - 2] == '1' || map[y][x - 2] == '3' || map[y][x - 2] == '9') {
 				return;
 			}
+			if (map[y][x - 2] == '4') {
+				map[y][x - 1] = '9';
+			}
 			map[y][x - 2] = map[y][x - 1];
 		}
 		// 上移
@@ -137,6 +162,9 @@ public class PbGame {
 			// 箱子前面是房子1，箱子3，压在目的地上的箱子9那么不能推动
 			if (map[y][x + 2] == '1' || map[y][x + 2] == '3' || map[y][x + 2] == '9') {
 				return;
+			}
+			if (map[y][x + 2] == '4') {
+				map[y][x + 1] = '9';
 			}
 			map[y][x + 2] = map[y][x + 1];
 		}

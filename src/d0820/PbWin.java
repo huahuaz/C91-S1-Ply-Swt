@@ -79,6 +79,7 @@ public class PbWin {
 				}
 				// TODO Auto-generated method stub
 				refresh();
+				pg.decideWin();
 			}
 		});
 
