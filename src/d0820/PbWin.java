@@ -16,6 +16,7 @@ import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.wb.swt.SWTResourceManager;
 
+import help.SwtHelper;
 import help.SwtLabelPaintListner;
 
 import org.eclipse.swt.layout.RowData;
@@ -89,6 +90,7 @@ public class PbWin {
 					pg.moveRight();
 				}
 				if (pg.isYouWin()) {
+					SwtHelper.message("您已过关!", shell);
 					pg.next();
 				}
 				refresh();
