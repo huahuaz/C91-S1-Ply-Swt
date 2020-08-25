@@ -4,6 +4,10 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import swing2swt.layout.BorderLayout;
 import org.eclipse.swt.widgets.Composite;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
@@ -11,6 +15,13 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.wb.swt.SWTResourceManager;
+
+import help.SwtLabelPaintListner;
+
+import org.eclipse.swt.layout.RowData;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.events.MouseAdapter;
+import org.eclipse.swt.events.MouseEvent;
 
 public class PbWin {
 
@@ -77,9 +88,11 @@ public class PbWin {
 				} else if (arg0.keyCode == 16777220) {
 					pg.moveRight();
 				}
-				// TODO Auto-generated method stub
+				if (pg.isYouWin()) {
+					pg.next();
+				}
 				refresh();
-				pg.decideWin();
+				// pg.decideWin();
 			}
 		});
 

@@ -142,8 +142,7 @@ public class RegWin {
 		pbScore.setBounds(131, 384, 210, 21);
 
 		Label lblNewLabel_3 = new Label(shell, SWT.BORDER);
-		lblNewLabel_3
-				.setImage(SWTResourceManager.getImage(RegWin.class, "/d0818/8e6d9657d5d1c35b30d36724d6e483d6.jpg"));
+		lblNewLabel_3.setImage(SWTResourceManager.getImage(RegWin.class, "/d0818/程序员.jpg"));
 		lblNewLabel_3.setBounds(311, 34, 111, 141);
 
 		Button button_3 = new Button(shell, SWT.NONE);
