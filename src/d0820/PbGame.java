@@ -119,7 +119,7 @@ public class PbGame {
 	 * 
 	 * @return
 	 */
-	/*
+	/* 初始判断胜利
 	 * public void decideWin() { int count = 0; for (int y = 0; y < map.length; y++)
 	 * { for (int x = 0; x < map.length; x++) { if (map[y][x] == '4') { count =
 	 * count + 1; } } } if (count == 0) { System.out.println("您已通过此关!"); level =
